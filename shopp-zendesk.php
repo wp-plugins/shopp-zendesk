@@ -1,12 +1,12 @@
 <?php
 /*
 Plugin Name: Shopp + Zendesk
-Description: Customers who order from your WordPress ecommerce store are added to your Zendesk after checkout.
-Version: 1.0
+Description: Customers who order from your WordPress e-commerce store are added to your Zendesk help desk after checkout.
+Version: 1.0.1
 Plugin URI: http://optimizemyshopp.com/blog/
 Author: Lorenzo Orlando Caum, Enzo12 LLC
 Author URI: http://enzo12.com
-License: GPL3
+License: GPLv2
 */
 /* (CC BY 3.0) 2011  Lorenzo Orlando Caum  (email : hello@enzo12.com)
 
@@ -110,15 +110,14 @@ class Shopp_Zendesk {
 					<p>After checkout, a customers email, name, and phone number will be added to your Zendesk.</p>
 					<p>This process occurs in the background without needing intervention from the user.</p> 
 					<p>*If a user has never used your Zendesk, then they will be asked to set a password for their account. <em>This may or may not be applicable as it depends on the settings in your Zendesk.</em></p>
-					<br />
-					<p><strong>Acknowledgements</strong><br />
-					Credit to Adam Sewell who wrote the original code that allowed for data to be transferred from Shopp to MailChimp. <a href="http://www.mygeeknc.com/shopp-toolbox/" title="Learn about Shopp Toolbox">View Adam's latest project</a><br />
-					Credit to Brian Hartvigsen who wrote the a PHP API Wrapper for the Zendesk API. <a href="https://support.zendesk.com/entries/30891-php-api-library" title="Learn about the PHP API Wrapper for Zendesk">Learn more</a></p>
+					<strong>Acknowledgements</strong>
+					<p>Credit to Adam Sewell who wrote the original code that allowed data to be transferred from Shopp to MailChimp. This code has been adapted for several other services. <a href="http://optimizemyshopp.com/go/adamsewell/" title="Learn about Shopp Toolbox">View Adam's latest project</a></p>
+					<p>Credit to Brian Hartvigsen who wrote the a PHP API Wrapper for the Zendesk API. <a href="https://support.zendesk.com/entries/30891-php-api-library" title="Learn about the PHP API Wrapper for Zendesk">Learn more about the Zendesk API</a></p>
 				</div>
 			</div>
 
 			<div id="shopp-zendesk-general-settings" class="postbox">
-				<h3 class="hndle"><span>Setup Tutorial</span></h3>
+				<h3 class="hndle"><span>Set Up Tutorial</span></h3>
 				<div class="inside">
 				<p>Pro-tip: After starting a video, click on the fullscreen button which appears to the right of the HD logo.</p>
 				<p><strong>A Walkthrough of the Integration</strong><br /><br /><iframe src="http://player.vimeo.com/video/32981420?title=0&amp;byline=0&amp;portrait=0" width="600" height="300" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe></p>
@@ -130,16 +129,19 @@ class Shopp_Zendesk {
 			<div id="shopp-zendesk-support-feedback" class="postbox">
 				<h3 class="hndle"><span>Support & Feedback</span></h3>
 				<div class="inside">
-				<p>This is a 3rd-party integration. Support is provided as a courtesy by Lorenzo Orlando Caum, Enzo12 LLC. If you have any questions or concerns, please open a <a href="http://optimizemyshopp.com/support/" title="Open a new support ticket with Optimize My Shopp">new support ticket</a> via our Help Desk.</p>
-				<p>You can share feedback via this a <a href="http://enzo12llc.polldaddy.com/s/shopp-zendesk" title="Take a super short survey">short survey</a>. Takes less 3 minutes -- we promise!</p>
-				<p>Feeling generous? Please consider <a href="http://optimizemyshopp.com/go/donate-shopp-zendesk/">donating</a>. You'll be helping me pay off my student loans.</p>				
+				<p>This is a 3rd-party integration.</p> 
+				<p>This plugin is <strong>actively supported</strong>. Support is provided as a courtesy by Lorenzo Orlando Caum, Enzo12 LLC. If you have any questions or concerns, please open a <a href="http://optimizemyshopp.com/support/" title="Open a new support ticket with Optimize My Shopp">new support ticket</a> via our Help Desk.</p>
+				<p>You can share feedback via this a <a href="http://optimizemyshopp.com/go/shopp-extension-feedback/" title="Take a super short survey">short survey</a>. Takes less 3 minutes -- we promise!</p>
+				<p>Feeling generous? Please consider <a href="http://optimizemyshopp.com/go/donate-shopp-zendesk/">buying me a Redbull</a> or tipping me through the <a href="http://optimizemyshopp.com/go/tip-shopp-help-desk/">Shopp Help Desk</a>.</p>				
 				</div>
 			</div>
 			
 			<div id="shopp-zendesk-settings" class="postbox">
 				<h3 class="hndle"><span>Zendesk Settings</span></h3>
-				<div class="inside"><p>
-					<form action="" method="post">
+				<div class="inside">
+				<p><strong>Current Limitation</strong></p>
+				<p>Zendesk has a feature called "Regular SSL". When enabled it secures your Help Desk via https. If you are using this feature you'll need to make an edit for the Shopp + Zendesk plugin  to work. <a href="http://optimizemyshopp.com/blog/how-to-use-shopp-zendesk-with-zendesks-regular-ssl/ ">Learn how to make this necessary edit</a></p>
+					<p><form action="" method="post">
 					<table>
 						<th>Account URL:</th>
 						<td><input type="text" name="account" size="35" value="<?php echo $this->account; ?>" /></td>
@@ -165,18 +167,18 @@ class Shopp_Zendesk {
 			<div id="shopp-zendesk-about-the-author" class="postbox">
 				<h3 class="hndle"><span>About the Author</span></h3>
 				<div class="inside">
-			<table border="1" width="100%">
-   					 <tr>
-     					 <td width="70%"><div><img style="padding: 5px 10px 0px 0px; float:left" src="http://cdn.lorenzocaum.com/wp-content/uploads/2011/01/lorenzo-orlando-caum.jpg" border="0" alt="Founder of Enzo12 LLC" width="115" height="160"><p><a href="http://twitter.com/lorenzocaum" >@lorenzocaum</a> is an entrepreneur and a marketer. <br><br>Lorenzo is the founder of Enzo12 LLC, an <a href="http://enzo12.com" title="Enzo12 LLC">e-commerce development firm</a> <br />in Tampa, FL. He is a graduate from the College of Business at the <br />University of South Florida. <br><br>Lorenzo contributes to the <a href="http://optimizemyshopp.com/go/shopp/" title="Learn more about Shopp">Shopp</a> project as a customer support rep.<br><br>He also has a <a href="http://lorenzocaum.com" title="Read Lorenzo's blog">business, marketing, and technology blog</a>.</p> </div></td>
+					<table border="0" width="100%">
+   					 	<tr>
+     						<td width="70%"><div><img style="padding: 5px 10px 0px 0px; float:left" src="http://cdn.lorenzocaum.com/wp-content/uploads/2011/01/lorenzo-orlando-caum.jpg" border="0" alt="Founder of Enzo12 LLC" width="115" height="160"><p><a href="http://twitter.com/lorenzocaum" >@lorenzocaum</a> is an entrepreneur and a marketer. <br><br>Lorenzo is the founder of Enzo12 LLC, a <a href="http://enzo12.com" title="Enzo12 LLC">web engineering firm</a> <br />in Tampa, FL. He is a graduate from the College of Business at the <br />University of South Florida. <br><br>Lorenzo contributes to the <a href="http://optimizemyshopp.com/go/shopp/" title="Learn more about Shopp">Shopp</a> project as a customer support rep.<br><br>He also has a <a href="http://lorenzocaum.com" title="Read Lorenzo's blog">business, marketing, and technology blog</a>.</p></div></td>
     					  <td width="30%"><div id="optin">
-					<Big>Get Free Email Updates</Big>
+						<Big>Get Free Email Updates</Big>
 						<form action="http://optimizemyshopp.us2.list-manage1.com/subscribe/post?u=5991854e8288cad7823e23d2e&amp;id=0719c3f096" method="post" target="_blank">
 						<p>
 						<input type="text" name="EMAIL" class="email" value="Enter your email" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" />
-						<input name="submit" type="submit" value="Get Access Today!" /></p>
+						<input name="submit" type="submit" value="Get Started Today!" /></p>
 						</form>
-					</div></td>
-   						 </tr>
+						</div></td>
+   						</tr>
 					</table>		
 				</div>
 			</div>
@@ -186,33 +188,35 @@ class Shopp_Zendesk {
 	
 	<div class="postbox-container" style="width:25%;">
 		<div class="metabox-holder">	
-				
-			<div id="shopp-zendesk-recommendations" class="postbox">
-				<h3 class="hndle"><span>Recommended</span></h3>
+			
+			<div id="shopp-zendesk-donate" class="postbox">
+				<h3 class="hndle"><span><strong>Make a Donation!</strong></span></h3>
 				<div class="inside">
-					<p>...Easy and automatic WordPress backups with BackupBuddy</p>
-					<p><a href="http://optimizemyshopp.com/go/backupbuddy/"><img src="http://ithemes.com/graphics/backupbuddy_sidebarad.png" border=0 alt="Backup WordPress Easily" ></a></p>	
+					<p>Hi friend!</p><p>If this plugin is helpful to you, then please <a href="http://optimizemyshopp.com/go/donate-shopp-zendesk/">buy me a Redbull</a>.</p> 
+					<p>You can also tip me through the <a href="http://optimizemyshopp.com/go/tip-shopp-help-desk/">Shopp Help Desk</a>.</p>
+					<p>Your kindness is appreciated and will go towards <em>continued development</em> of the Shopp + Zendesk plugin.</p>
 				</div>
 			</div>
-			
+
 			<div id="shopp-zendesk-subscribe" class="postbox">
 				<h3 class="hndle"><span>Free Email Updates</span></h3>
 				<div class="inside">
+					<p>Get infrequent email updates delivered right to your inbox.</p>
 					<p><div id="optin">
 					<form action="http://optimizemyshopp.us2.list-manage1.com/subscribe/post?u=5991854e8288cad7823e23d2e&amp;id=0719c3f096" method="post" target="_blank">
 					<p>
 					<input type="text" name="EMAIL" class="email" value="Enter your email" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" />
-					<input name="submit" type="submit" value="Get Access Today!" /></p></form></div></p>				
+					<input name="submit" type="submit" value="Get Started!" /></p></form></div></p>				
 				</div>
 			</div>
 					
 			<div id="shopp-zendesk-have-a-question" class="postbox">
 				<h3 class="hndle"><span>Have a Question?</span></h3>
 				<div class="inside">
-					<p>View our <a title="View frequently asked questions at Optimize My Shopp" href="http://optimizemyshopp.com/support/frequently-asked-questions/">frequently asked questions</a>.<br /><br />Open a <a href="http://optimizemyshopp.com/support/" title="Open a new support ticket with Optimize My Shopp">new support ticket</a>.<br /><br />Learn about <a href="http://optimizemyshopp.com/resources/" title="Open a new support ticket with Optimize My Shopp">additional resources</a>.</p></p>
+					<p>Open a <a href="http://optimizemyshopp.com/support/" title="Open a new support ticket with Optimize My Shopp">new support ticket</a> for Shopp + Zendesk<br /><br />Learn about <a href="http://optimizemyshopp.com/resources/" title="Learn about extra Shopp resources">additional Shopp resources</a><br /><br />View my post on <a title="How to Get Awesome Support on the Shopp Help Desk" href="http://optimizemyshopp.com/blog/how-to-get-awesome-support-from-the-shopp-help-desk/">getting awesome support</a> through the Shopp Help Desk</p>
 				</div>
 			</div>
-
+			
 			<div id="shopp-zendesk-enjoy-this-plugin" class="postbox">
 				<h3 class="hndle"><span>Enjoy this Plugin?</span></h3>
 				<div class="inside">
@@ -225,7 +229,7 @@ class Shopp_Zendesk {
   					fjs.parentNode.insertBefore(js, fjs);
 					}(document, 'script', 'facebook-jssdk'));</script>
 
-					<div class="fb-like" data-href="https://www.facebook.com/pages/Optimize-My-Shopp/119961178103810" data-send="false" data-layout="button_count" data-width="5" data-show-faces="false" data-font="lucida grande">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div><br /><br /> <!-- Place this tag where you want the +1 button to render -->
+					<div class="fb-like" data-href="http://facebook.com/enzo12llc" data-send="false" data-layout="button_count" data-width="5" data-show-faces="false" data-font="lucida grande">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div><br /><br /> <!-- Place this tag where you want the +1 button to render -->
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="g-plusone" data-annotation="inline" data-width="120" data-href="http://optimizemyshopp.com/blog/"></div>
 
 					<!-- Place this render call where appropriate -->
@@ -235,21 +239,49 @@ class Shopp_Zendesk {
     				po.src = 'https://apis.google.com/js/plusone.js';
     				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   					})();
-					</script></li><li><strong>Show your kindness</strong> with a <a href="http://optimizemyshopp.com/go/donate-shopp-zendesk/">donation</a></li></p>		 
+					</script></li><li><strong>Express your kindness</strong> with a <a href="http://optimizemyshopp.com/go/donate-shopp-zendesk/">donation</a></li></p>		 
 				</div>
 			</div>
 
-				<div id="shopp-zendesk-news-from-oms" class="postbox">
+			<div id="shopp-zendesk-news-from-oms" class="postbox">
 				<h3 class="hndle"><span>News from Optimize My Shopp</span></h3>
 				<div class="inside"><p>Free eBook<br /> <a href="http://optimizemyshopp.com/the-list/" title="Receive your free eBook delivered instantly to your inbox">10 Steps to a More Secure WordPress</a></p>
-				<p>White Paper<br /> <a href="http://optimizemyshopp.com/resources/white-papers/" title="Get your free white paper on creating a fast Shopp website">Speeding up your Shopp Ecommerce Website</a></p>
+				<p>White Papers<br /> <a href="http://optimizemyshopp.com/resources/white-papers/" title="Get your free white paper on creating a fast Shopp website">Speeding up your Shopp Ecommerce Website</a><br /><a href="http://optimizemyshopp.com/resources/white-papers/" title="Get your free white paper on using Shopp with caching plugins">Shopp + Caching Plugins</a></p>
+				<?php _e('Recent posts from the blog:'); ?>
+				<?php // Get RSS Feed(s)
+				include_once(ABSPATH . WPINC . '/feed.php');
+
+				// Get a SimplePie feed object from the specified feed source.
+				$rss = fetch_feed('http://feeds.feedburner.com/optimizemyshopp');
+				if (!is_wp_error( $rss ) ) : // Checks that the object is created correctly 
+    			// Figure out how many total items there are, but limit it to 5. 
+    			$maxitems = $rss->get_item_quantity(7); 
+
+    			// Build an array of all the items, starting with element 0 (first element).
+    			$rss_items = $rss->get_items(0, $maxitems); 
+				endif;
+				?>
+
+				<ul>
+    			<?php if ($maxitems == 0) echo '<li>No items.</li>';
+    			else
+    			// Loop through each feed item and display each item as a hyperlink.
+    			foreach ( $rss_items as $item ) : ?>
+    			<li>
+        		<a href='<?php echo esc_url( $item->get_permalink() ); ?>'
+        		title='<?php echo 'Posted '.$item->get_date('j F Y | g:i a'); ?>'>
+        		<?php echo esc_html( $item->get_title() ); ?></a>
+    			</li>
+    			<?php endforeach; ?>
+				</ul>
 				</div>
 			</div>		
-
-				<div id="shopp-zendesk-donate" class="postbox">
-				<h3 class="hndle"><span><strong>Make a Donation!</strong></span></h3>
+			
+			<div id="shopp-zendesk-recommendations" class="postbox">
+				<h3 class="hndle"><span>Recommended</span></h3>
 				<div class="inside">
-					<p>Hi friend!</p><p>If this plugin is helpful for you, then please consider <a href="http://optimizemyshopp.com/go/donate-shopp-zendesk/">making a donation</a>.</p><p>Your kindness will help me <em>pay off my student loans</em>.</p>
+					<p>...Easy and automatic WordPress backups with BackupBuddy</p>
+					<p><a href="http://optimizemyshopp.com/go/backupbuddy/"><img src="http://ithemes.com/graphics/backupbuddy_sidebarad.png" border=0 alt="Backup WordPress Easily" ></a></p>	
 				</div>
 			</div>
 
