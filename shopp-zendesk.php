@@ -2,13 +2,13 @@
 /*
 Plugin Name: Shopp + Zendesk
 Description: Customers who order from your WordPress e-commerce store are added to your Zendesk help desk after checkout.
-Version: 1.0.1
-Plugin URI: http://optimizemyshopp.com/blog/
+Version: 1.0.2
+Plugin URI: http://optimizemyshopp.com/
 Author: Lorenzo Orlando Caum, Enzo12 LLC
 Author URI: http://enzo12.com
 License: GPLv2
 */
-/* (CC BY 3.0) 2011  Lorenzo Orlando Caum  (email : hello@enzo12.com)
+/* (CC BY 3.0) 2012  Lorenzo Orlando Caum  (email : hello@enzo12.com)
 
 	This plugin is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -171,7 +171,7 @@ class Shopp_Zendesk {
    					 	<tr>
      						<td width="70%"><div><img style="padding: 5px 10px 0px 0px; float:left" src="http://cdn.lorenzocaum.com/wp-content/uploads/2011/01/lorenzo-orlando-caum.jpg" border="0" alt="Founder of Enzo12 LLC" width="115" height="160"><p><a href="http://twitter.com/lorenzocaum" >@lorenzocaum</a> is an entrepreneur and a marketer. <br><br>Lorenzo is the founder of Enzo12 LLC, a <a href="http://enzo12.com" title="Enzo12 LLC">web engineering firm</a> <br />in Tampa, FL. He is a graduate from the College of Business at the <br />University of South Florida. <br><br>Lorenzo contributes to the <a href="http://optimizemyshopp.com/go/shopp/" title="Learn more about Shopp">Shopp</a> project as a customer support rep.<br><br>He also has a <a href="http://lorenzocaum.com" title="Read Lorenzo's blog">business, marketing, and technology blog</a>.</p></div></td>
     					  <td width="30%"><div id="optin">
-						<Big>Get Free Email Updates</Big>
+						<Big>Get Free Email Updates about using Shopp</Big>
 						<form action="http://optimizemyshopp.us2.list-manage1.com/subscribe/post?u=5991854e8288cad7823e23d2e&amp;id=0719c3f096" method="post" target="_blank">
 						<p>
 						<input type="text" name="EMAIL" class="email" value="Enter your email" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" />
@@ -201,7 +201,7 @@ class Shopp_Zendesk {
 			<div id="shopp-zendesk-subscribe" class="postbox">
 				<h3 class="hndle"><span>Free Email Updates</span></h3>
 				<div class="inside">
-					<p>Get infrequent email updates delivered right to your inbox.</p>
+					<p>Get infrequent email updates delivered right to your inbox about getting the most from your Shopp.</p>
 					<p><div id="optin">
 					<form action="http://optimizemyshopp.us2.list-manage1.com/subscribe/post?u=5991854e8288cad7823e23d2e&amp;id=0719c3f096" method="post" target="_blank">
 					<p>
@@ -248,16 +248,14 @@ class Shopp_Zendesk {
 				<div class="inside"><p>Free eBook<br /> <a href="http://optimizemyshopp.com/the-list/" title="Receive your free eBook delivered instantly to your inbox">10 Steps to a More Secure WordPress</a></p>
 				<p>White Papers<br /> <a href="http://optimizemyshopp.com/resources/white-papers/" title="Get your free white paper on creating a fast Shopp website">Speeding up your Shopp Ecommerce Website</a><br /><a href="http://optimizemyshopp.com/resources/white-papers/" title="Get your free white paper on using Shopp with caching plugins">Shopp + Caching Plugins</a></p>
 				<?php _e('Recent posts from the blog:'); ?>
-				<?php // Get RSS Feed(s)
+				<?php
 				include_once(ABSPATH . WPINC . '/feed.php');
 
-				// Get a SimplePie feed object from the specified feed source.
 				$rss = fetch_feed('http://feeds.feedburner.com/optimizemyshopp');
-				if (!is_wp_error( $rss ) ) : // Checks that the object is created correctly 
-    			// Figure out how many total items there are, but limit it to 5. 
+				if (!is_wp_error( $rss ) ) : 
+
     			$maxitems = $rss->get_item_quantity(7); 
 
-    			// Build an array of all the items, starting with element 0 (first element).
     			$rss_items = $rss->get_items(0, $maxitems); 
 				endif;
 				?>
@@ -265,7 +263,7 @@ class Shopp_Zendesk {
 				<ul>
     			<?php if ($maxitems == 0) echo '<li>No items.</li>';
     			else
-    			// Loop through each feed item and display each item as a hyperlink.
+
     			foreach ( $rss_items as $item ) : ?>
     			<li>
         		<a href='<?php echo esc_url( $item->get_permalink() ); ?>'
@@ -280,8 +278,8 @@ class Shopp_Zendesk {
 			<div id="shopp-zendesk-recommendations" class="postbox">
 				<h3 class="hndle"><span>Recommended</span></h3>
 				<div class="inside">
-					<p>...Easy and automatic WordPress backups with BackupBuddy</p>
-					<p><a href="http://optimizemyshopp.com/go/backupbuddy/"><img src="http://ithemes.com/graphics/backupbuddy_sidebarad.png" border=0 alt="Backup WordPress Easily" ></a></p>	
+					<p>Need a fresh pair of eyes to review your WordPress e-commerce site? You should order a WordPress e-commerce site analysis today! <a href="http://optimizemyshopp.com/store/wordpress-ecommerce-site-analysis/" title="Learn more about our site review">Learn more</a></p>
+					<p>What do you think about video tutorials for Shopp? <a href="http://shoppcreators.com" title="Learn more about Shopp video tutorials">Learn more</a></p>
 				</div>
 			</div>
 
