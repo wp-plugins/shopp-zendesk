@@ -2,8 +2,8 @@
 /*
 Plugin Name: Shopp + Zendesk
 Description: Customers who order from your WordPress e-commerce store are added to your Zendesk help desk after checkout.
-Version: 1.0.2
-Plugin URI: http://optimizemyshopp.com/
+Version: 1.0.3
+Plugin URI: http://optimizemyshopp.com
 Author: Lorenzo Orlando Caum, Enzo12 LLC
 Author URI: http://enzo12.com
 License: GPLv2
@@ -43,7 +43,7 @@ class Shopp_Zendesk {
 	}
 
 	public function init() {
-		wp_enqueue_style( 'shopp-zendesk-stylesheet', plugins_url( "css/shopp-zendesk.css", __FILE__ ), array(), '20111128' );
+		wp_enqueue_style( 'shopp-zendesk-stylesheet', plugins_url( "css/shopp-zendesk.css", __FILE__ ), array(), '20120608' );
 		
 		// Actions and filters
 		add_action('admin_menu', array(&$this, 'admin_menu'));
@@ -52,7 +52,7 @@ class Shopp_Zendesk {
 	public function admin_menu() {
 		global $Shopp;
 		$ShoppMenu = $Shopp->Flow->Admin->MainMenu;
-		add_submenu_page($ShoppMenu,__('Shopp + Zendesk', 'page title'), __('+ Zendesk','menu title'), defined('SHOPP_USERLEVEL') ? SHOPP_USERLEVEL : 'manage_options', 'shopp-zendesk', array(&$this, 'render_display_settings'));
+		$page = add_submenu_page($ShoppMenu,__('Shopp + Zendesk', 'page title'), __('+ Zendesk','menu title'), defined('SHOPP_USERLEVEL') ? SHOPP_USERLEVEL : 'manage_options', 'shopp-zendesk', array(&$this, 'render_display_settings'));
 
 		add_action( 'admin_print_styles-' . $page, 'admin_styles' );
 	}
@@ -278,7 +278,7 @@ class Shopp_Zendesk {
 			<div id="shopp-zendesk-recommendations" class="postbox">
 				<h3 class="hndle"><span>Recommended</span></h3>
 				<div class="inside">
-					<p>Need a fresh pair of eyes to review your WordPress e-commerce site? You should order a WordPress e-commerce site analysis today! <a href="http://optimizemyshopp.com/store/wordpress-ecommerce-site-analysis/" title="Learn more about our site review">Learn more</a></p>
+					<p>Want a better WordPress e-commerce site? <br /><br />You should order a WordPress e-commerce site analysis today! <a href="http://optimizemyshopp.com/store/wordpress-ecommerce-site-analysis/" title="Learn more about our site review">Learn more</a></p>
 					<p>What do you think about video tutorials for Shopp? <a href="http://shoppcreators.com" title="Learn more about Shopp video tutorials">Learn more</a></p>
 				</div>
 			</div>
