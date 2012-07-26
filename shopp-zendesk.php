@@ -2,7 +2,7 @@
 /*
 Plugin Name: Shopp + Zendesk
 Description: Customers who order from your WordPress e-commerce store are added to your Zendesk help desk after checkout.
-Version: 1.0.4
+Version: 1.0.5
 Plugin URI: http://optimizemyshopp.com
 Author: Lorenzo Orlando Caum, Enzo12 LLC
 Author URI: http://enzo12.com
@@ -51,7 +51,7 @@ class Shopp_Zendesk {
 	}
 
 	public function init() {
-		wp_enqueue_style( 'shopp-zendesk-stylesheet', plugins_url( "css/shopp-zendesk.css", __FILE__ ), array(), '20121607' );
+		wp_enqueue_style( 'shopp-zendesk-stylesheet', plugins_url( "css/shopp-zendesk.css", __FILE__ ), array(), '20120725' );
 		
 		add_action('admin_menu', array($this, 'admin_menu'));
 	}
@@ -105,6 +105,7 @@ class Shopp_Zendesk {
 			update_option("shopp_zendesk_organization", $this->organization);
 		}
 ?>
+
 <div class="wrap">
 	<h2>Shopp + Zendesk</h2>
 	<div class="postbox-container" style="width:65%;">
@@ -114,14 +115,14 @@ class Shopp_Zendesk {
 				<h3 class="hndle"><span>Introduction</span></h3>
 				<div class="inside">
 					<p>This plugin integrates <a href="http://optimizemyshopp.com/go/shopp/" title="Learn more about Shopp">Shopp</a> with <a href="http://optimizemyshopp.com/go/zendesk/" title="Learn more about Zendesk">Zendesk</a>.</p> 
-					<p>After checkout, a customers email, name, and phone number will be added to your Zendesk.</p>
+					<p>After checkout, a customer's email, name, and phone number will be added to your Zendesk.</p>
 					<p>This process occurs in the background without needing action from the user.</p> 
 					<p>*If a user has never used your Zendesk, then they will be asked to set a password for their account. <em>This may or may not be applicable as it depends on the settings in your Zendesk.</em></p>
 					<strong>Acknowledgements</strong>
 					<br />
-					<p>Credit to Adam Sewell who wrote the original code that allowed data to be transferred from Shopp after checkout. This code has been adapted for several other services. <a href="http://optimizemyshopp.com/go/adamsewell/" title="Learn about Shopp Toolbox">View Adam's latest project</a></p>
-					<p>Credit to Brian Hartvigsen who wrote the a PHP API Wrapper for the Zendesk API. <a href="https://support.zendesk.com/entries/30891-php-api-library" title="Learn about the PHP API Wrapper for Zendesk">Learn more about the Zendesk API</a></p>
-					<p>Credit to Barry Hughes who identified errors in this plugin and developed the groundwork for extending this plugin further. <a href="http://optimizemyshopp.com/go/barryhughes/" title="Get in touch with Barry Hughes">Go to Barry's website</a></p>
+					<p>Credit to Adam Sewell who wrote the original code that allowed data to be transferred from Shopp after checkout. This code has been extended for several other services. <a href="http://optimizemyshopp.com/go/adamsewell/" title="Learn about Shopp Toolbox">View Adam's latest project</a></p>
+					<p>Credit to Brian Hartvigsen who created the PHP API Wrapper for the Zendesk API. <a href="https://support.zendesk.com/entries/30891-php-api-library" title="Learn about the PHP API Wrapper for Zendesk">Learn more about the Zendesk API</a></p>
+					<p>Credit to Barry Hughes who identified errors in this plugin and developed the groundwork for extending it further. <a href="http://optimizemyshopp.com/go/barryhughes/" title="Get in touch with Barry Hughes">Go to Barry's website</a></p>
 				</div>
 			</div>
 
@@ -195,7 +196,8 @@ class Shopp_Zendesk {
 			<div id="shopp-zendesk-donate" class="postbox">
 				<h3 class="hndle"><span><strong>Make a Donation!</strong></span></h3>
 				<div class="inside">
-					<p>Hi friend!</p><p>If this plugin is helpful to you, then please <a href="http://optimizemyshopp.com/go/donate-shopp-zendesk/">buy me a Redbull</a>.</p> 
+					<p>Hi friend!</p>
+					<p>If this plugin is helpful to you, then please <a href="http://optimizemyshopp.com/go/donate-shopp-zendesk/">buy me a Redbull</a>.</p> 
 					<p>You can also tip me through the <a href="http://optimizemyshopp.com/go/tip-shopp-help-desk/">Shopp Help Desk</a>.</p>
 					<p>Your kindness is appreciated and will go towards <em>continued development</em> of the Shopp + Zendesk plugin.</p>
 				</div>
