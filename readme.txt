@@ -1,33 +1,39 @@
-=== Shopp + Zendesk ===Contributors: lorenzocaum, enzo12llcDonate link: http://optimizemyshopp.com/go/donate-shopp-zendesk/Tags: shopp, shopp plugin, wp e-commerce, e-commerce, online store, web store, shopping cart, help desk, helpdesk, helpdesk software, support ticket system, zendesk, zen desk, webshopRequires at least: 3.0Tested up to: 3.4.1Stable tag: 1.0.4
+=== Shopp + Zendesk ===Contributors: lorenzocaum, enzo12llcDonate link: http://optimizemyshopp.com/go/donate-shopp-zendesk/Tags: shopp, shopp plugin, wp e-commerce, e-commerce, online store, web store, shopping cart, help desk, helpdesk, helpdesk software, support ticket system, zendesk, zen desk, webshopRequires at least: 3.0Tested up to: 3.4.1Stable tag: 1.0.5
 License: GPLv2Customers who order from your WordPress e-commerce store are added to your Zendesk help desk after checkout.== Description ==This plugin integrates [Shopp](http://shopplugin.net) with [Zendesk](http://www.zendesk.com).
 
 After checkout, a customer's email, name, and phone number will be added to your Zendesk.
 
-This process occurs in the background without needing action from the user.With Shopp + Zendesk you don't have to enter this information in manually. It is done automatically with each order.
+This process occurs in the background without needing action from the user.With Shopp + Zendesk you no longer need to enter this information in manually. It is done automatically with each order.
 
 = Recommendations =
 
 * Hire a [Shopp consultant](http://optimizemyshopp.com/store/wordpress-consulting/) to review your e-commerce site.
 * View additional [Shopp extensions](http://optimizemyshopp.com/resources/plugins/) by Lorenzo Orlando Caum, Enzo12 LLC
 * Follow Lorenzo on [Facebook](http://facebook.com/lorenzocaum), [Twitter](http://twitter.com/lorenzocaum), and [LinkedIn](http://www.linkedin.com/in/lorenzocaum)
-== Installation ==1. You'll need to have an account with [Zendesk](http://www.zendesk.com).2. Ensure that your [Shopp](http://shopplugin.net) is up-to-date.3. Upload the `shopp-zendesk` directory to the `wp-content/plugins/` directory.4. Activate the plugin through the 'Plugins' menu in WordPress.5. Go to Shopp  &rarr; + Zendesk. Enter your account url, username, and password for Zendesk and Save Settings.== Frequently Asked Questions === How do I get a Zendesk account? =Visit [Zendesk.com](http://www.zendesk.com).= What is Shopp and how do I get it? =Shopp is bolt-on e-commerce for WordPress. Learn more about [Shopp](http://shopplugin.net).== Screenshots ==1. The Shopp + Zendesk interface.
-2. An additional view of the Shopp + Zendesk interface.
+== Installation ==1. You'll need to have an account with [Zendesk](http://www.zendesk.com).2. Ensure that your [Shopp](http://shopplugin.net) is activated and up-to-date.3. Download Shopp + Zendesk. Unzip the `shopp-zendesk` folder.4. Upload the `shopp-zendesk` folder to the `wp-content/plugins/` directory.5. Activate Shopp + Zendesk through the Plugins menu in the WordPress admin.6. Go to Shopp &rarr; + Zendesk. 
+7. Enter your Account URL, Username, and Password for Zendesk and Save Settings.== Frequently Asked Questions === How do I get a Zendesk account? =Visit [Zendesk.com](http://www.zendesk.com) to register for an account.= What is Shopp and how do I get it? =Shopp is an e-commerce plugin for WordPress. Learn more about [Shopp](http://shopplugin.net).
+
+= Are there any other extensions available for Shopp? =Yes! Please visit [Optimize My Shopp](http://optimizemyshopp.com/resources/plugins/).== Screenshots ==1. The Shopp + Zendesk WordPress admin page.
+2. An additional view of the Shopp + Zendesk WordPress admin page.
 
 == Other Notes ==
 
 = Acknowledgements =
 
-Credit to Adam Sewell who wrote the original code that allowed data to be transferred from Shopp to MailChimp. This code has been extended for several other services.
+Credit to Adam Sewell who wrote the original code that allowed data to be transferred from Shopp after checkout. This code has been extended for several other services.
 
-Credit to Brian Hartvigsen who wrote the a PHP API Wrapper for the Zendesk API.
+Credit to Brian Hartvigsen who created the a PHP API Wrapper for the Zendesk API.
 
-Credit to Barry Hughes who identified errors in this plugin and developed the groundwork for extending this plugin further.
+Credit to Barry Hughes who identified errors in this plugin and developed the groundwork for extending it further.
 
 = Recommended Links =
 
 Want a better WordPress e-commerce site? You should contact us to request a [WordPress e-commerce site analysis](http://optimizemyshopp.com/store/wordpress-ecommerce-site-analysis/) today.
 
 What do you think about video tutorials for Shopp? [Get an invite](http://shoppcreators.com)== Changelog ==
+
+= 1.0.5 =
+* Fixed CSS date format
 
 = 1.0.4 =* Corrected errors from array(&$this
 * Verified support for WordPress 3.4.1
@@ -55,6 +61,8 @@ What do you think about video tutorials for Shopp? [Get an invite](http://shoppc
 * Added option to donate through the Shopp Help Desk
 * Added RSS Feed
 = 1.0 =* First version!== Upgrade Notice ==
+
+= 1.0.5 =Various improvements and fixes. Upgrade recommended.
 
 = 1.0.4 =Bug fixes and general updates. Upgrade today!
 
