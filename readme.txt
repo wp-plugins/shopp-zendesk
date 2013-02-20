@@ -3,8 +3,8 @@ Contributors: lorenzocaum, enzo12llc
 Donate link: http://optimizemyshopp.com/go/donate-shopp-zendesk/
 Tags: ecommerce, online store, shopping cart, webshop, wp e-commerce, shopp plugin, shopp, helpdesk, support ticket system, help desk software, zendesk
 Requires at least: 3.0
-Tested up to: 3.4.2
-Stable tag: 1.0.6
+Tested up to: 3.5
+Stable tag: 1.0.7
 License: GPLv2
 
 Customers who order from your WordPress e-commerce store are added to your Zendesk help desk after checkout.
@@ -21,7 +21,8 @@ With Shopp + Zendesk you no longer need to enter this information in manually. I
 
 = Recommendations =
 
-* Need help with your Shopp ecommerce store? Hire a [Shopp consultant](http://optimizemyshopp.com/store/wordpress-consulting/) today.
+* Learn about our latest project: Shopp 101 -- [Web-based training for Shopp e-commerce plugin](http://shopp101.com)
+* Need help with your Shopp ecommerce store? Hire a [Shopp consultant and developer](http://optimizemyshopp.com/store/wordpress-consulting/) today.
 * View additional [WordPress plugins for Shopp](http://optimizemyshopp.com/resources/#shopp-extensions) by Lorenzo Orlando Caum, Enzo12 LLC
 * Follow Lorenzo on [Facebook](http://facebook.com/lorenzocaum), [Twitter](http://twitter.com/lorenzocaum), and [LinkedIn](http://www.linkedin.com/in/lorenzocaum)
 
@@ -66,9 +67,14 @@ Credit to Brian Hartvigsen who created the a PHP API Wrapper for the Zendesk API
 
 Need a Shopp developer to help you with your Shopp? Hire a [Shopp consultant](http://optimizemyshopp.com/store/wordpress-consulting/) today.
 
-What do you think about video tutorials for Shopp? [Get an invite](http://shopp101.com)
+What do you think about video tutorials for Shopp? [Online training for Shopp from Shopp 101](http://shopp101.com)
 
 == Changelog ==
+
+= 1.0.7 =
+* Verified support for Shopp 1.2.4 and 1.2.5
+* Removed social sharing
+* Verified support for WordPress 3.5
 
 = 1.0.6 =
 * Fixed broken links
@@ -113,6 +119,9 @@ What do you think about video tutorials for Shopp? [Get an invite](http://shopp1
 * First version!
 
 == Upgrade Notice ==
+
+= 1.0.7 =
+Upgrade Shopp + Zendesk today.
 
 = 1.0.6 =
 Upgrade immediately!

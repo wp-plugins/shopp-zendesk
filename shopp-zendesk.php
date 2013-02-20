@@ -2,7 +2,7 @@
 /*
 Plugin Name: Shopp + Zendesk
 Description: Customers who order from your WordPress e-commerce store are added to your Zendesk help desk after checkout.
-Version: 1.0.6
+Version: 1.0.7
 Plugin URI: http://optimizemyshopp.com
 Author: Lorenzo Orlando Caum, Enzo12 LLC
 Author URI: http://enzo12.com
@@ -51,7 +51,7 @@ class Shopp_Zendesk {
 	}
 
 	public function init() {
-		wp_enqueue_style( 'shopp-zendesk-stylesheet', plugins_url( "css/shopp-zendesk.css", __FILE__ ), array(), '20121101' );
+		wp_enqueue_style( 'shopp-zendesk-stylesheet', plugins_url( "css/shopp-zendesk.css", __FILE__ ), array(), '20130219' );
 		
 		add_action('admin_menu', array($this, 'admin_menu'));
 	}
@@ -233,43 +233,11 @@ class Shopp_Zendesk {
 				</div>
 			</div>
 
-			<div id="shopp-zendesk-enjoy-this-plugin" class="postbox">
-				<h3 class="hndle"><span>Enjoy this Plugin?</span></h3>
-				<div class="inside">
-					<p>
-					<ol>
-					<li><strong>Rate it </strong><a href="http://wordpress.org/extend/plugins/shopp-zendesk/">5 stars on WordPress.org</a></li>
-					<li><strong>Spread social joy</strong> ;)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://optimizemyshopp.com" data-text="Shopp + Zendesk for my #WordPress #ecommerce store" data-count="none" data-via="enzo12llc" data-related="lorenzocaum:entrepreneur">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script><br /><br /><div id="fb-root"></div>
-					<script>(function(d, s, id) {
- 					var js, fjs = d.getElementsByTagName(s)[0];
-  					if (d.getElementById(id)) {return;}
-  					js = d.createElement(s); js.id = id;
-  					js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-  					fjs.parentNode.insertBefore(js, fjs);
-					}(document, 'script', 'facebook-jssdk'));</script>
-
-					<div class="fb-like" data-href="http://optimizemyshopp.com" data-send="false" data-layout="button_count" data-width="5" data-show-faces="false" data-font="lucida grande">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div><br /><br /> <!-- Place this tag where you want the +1 button to render -->
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="g-plusone" data-annotation="inline" data-width="120" data-href="http://optimizemyshopp.com"></div>
-
-					<!-- Place this render call where appropriate -->
-					<script type="text/javascript">
-  					(function() {
-   		 			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    				po.src = 'https://apis.google.com/js/plusone.js';
-    				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  					})();
-					</script></li>
-					<li><strong>Express your kindness</strong> with a <a href="http://optimizemyshopp.com/go/donate-shopp-zendesk/">donation</a></li>
-					</ol>
-					</p>		 
-				</div>
-			</div>
-
-			<div id="shopp-zendesk-news-from-oms" class="postbox">
+            <div id="shopp-zendesk-news-from-oms" class="postbox">
 				<h3 class="hndle"><span>News from Optimize My Shopp</span></h3>
-				<div class="inside"><p>Free eBook<br /> <a href="http://optimizemyshopp.com/the-list/" title="Receive your free eBook delivered instantly to your inbox">10 Steps to a More Secure WordPress</a></p>
+				<div class="inside"><p>Free eBook<br /> <a href="http://optimizemyshopp.com/newsletter/" title="Receive your free eBook delivered instantly to your inbox">10 Steps to a More Secure WordPress</a></p>
 				<p>White Papers<br /> <a href="http://optimizemyshopp.com/resources/white-papers/" title="Get your free white paper on creating a fast Shopp website">Speeding up your Shopp Ecommerce Website</a><br /><a href="http://optimizemyshopp.com/resources/white-papers/" title="Get your free white paper on using Shopp with caching plugins">Shopp + Caching Plugins</a></p>
-				<?php _e('Recent posts from the blog:'); ?>
+				<?php _e('Recent posts from the blog'); ?>
 				<?php
 				include_once(ABSPATH . WPINC . '/feed.php');
 				$rss = fetch_feed('http://feeds.feedburner.com/optimizemyshopp');
@@ -296,7 +264,7 @@ class Shopp_Zendesk {
 				<h3 class="hndle"><span>Recommended</span></h3>
 				<div class="inside">
                     <p>Need a Shopp developer to help you with your online store? <br /><a href="http://optimizemyshopp.com/store/wordpress-consulting/" title="Hire a Shopp developer today">Get in touch today</a></p>
-                    <p>What do you think about video tutorials for Shopp? <br /><a href="http://optimizemyshopp.com/go/shopp101/" title="Learn more about Shopp video tutorials">Request an invite</a></p>
+                    <p>What do you think about video tutorials for Shopp? <br /><a href="http://optimizemyshopp.com/go/shopp101/" title="Learn more about Shopp video tutorials">Join Shopp 101 as a member today</a></p>
 				</div>
 			</div>
 
