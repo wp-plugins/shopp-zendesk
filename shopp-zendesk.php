@@ -2,15 +2,15 @@
 /*
 Plugin Name: Shopp + Zendesk
 Description: Customers who order from your WordPress e-commerce store are added to your Zendesk help desk after checkout.
-Version: 1.0.7
+Version: 1.2
 Plugin URI: http://optimizemyshopp.com
 Author: Lorenzo Orlando Caum, Enzo12 LLC
 Author URI: http://enzo12.com
 License: GPLv2
 */
 /* 
-(CC BY 3.0) 2012  Lorenzo Orlando Caum  (email : hello@enzo12.com)
-
+(CC BY 3.0) 2013 Lorenzo Orlando Caum (email : hello@enzo12.com)
+ 
 	This plugin is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
 	the Free Software Foundation, either version 3 of the License, or
@@ -51,22 +51,147 @@ class Shopp_Zendesk {
 	}
 
 	public function init() {
-		wp_enqueue_style( 'shopp-zendesk-stylesheet', plugins_url( "css/shopp-zendesk.css", __FILE__ ), array(), '20130219' );
+		wp_enqueue_style( 'shopp-zendesk-stylesheet', plugins_url( "css/shopp-zendesk.css", __FILE__ ), array(), '20130415' );
 		
 		add_action('admin_menu', array($this, 'admin_menu'));
 	}
 
 	public function admin_menu() {
-		global $Shopp;
-		$ShoppMenu = $Shopp->Flow->Admin->MainMenu;
-		$page = add_submenu_page($ShoppMenu,__('Shopp + Zendesk', 'page title'), __('+ Zendesk','menu title'), defined('SHOPP_USERLEVEL') ? SHOPP_USERLEVEL : 'manage_options', 'shopp-zendesk', array($this, 'render_display_settings'));
+		if(!$this->extensions_menu_exist()){
+			add_menu_page('+ Extensions', '+ Extensions', 'shopp_menu', 'shopp-extensions', array($this, 'display_shopp_extensions_welcome'), null, 57.5);
+			$page = add_submenu_page('shopp-extensions', 'Shopp + Extensions', 'Start Here', 'shopp_menu', 'shopp-extensions', array($this, 'display_shopp_extensions_welcome'));
+	        add_action( 'admin_print_styles-' . $page, 'admin_styles' );
+		}
 
-		add_action( 'admin_print_styles-' . $page, 'admin_styles' );
+		$page = add_submenu_page('shopp-extensions', 'Zendesk', 'Zendesk', 'shopp_menu', 'shopp-zendesk', array($this, 'render_display_settings'));
+        add_action( 'admin_print_styles-' . $page, 'admin_styles' );
+
 	}
+	
+	public function extensions_menu_exist(){
+        global $menu;
+        $return = false;
+        foreach($menu as $menus => $item){
+            if($item[0] == '+ Extensions'){
+                $return = true;
+            }
+        }
+        return $return;
+    }
 	
  	public function admin_styles() {
        	wp_enqueue_style( 'shopp-zendesk-stylesheet' );
   	}
+
+    public function display_shopp_extensions_welcome(){
+		?>
+	<div class="wrap">
+	<h2>Shopp + Extensions</h2>
+	<div class="postbox-container" style="width:65%;">
+		<div class="metabox-holder">	
+
+			<div id="shopp-extensions-hello" class="postbox">
+				<h3 class="hndle"><span>Welcome</span></h3>
+				<div class="inside">
+				<p>Thank you for installing and activating a + Extension for Shopp.</p>
+				<p>To setup and begin using your new extension, locate Shopp in the WordPress Administration Menus &rarr; + Extensions &rarr; and click on your extension.</p>
+				</div>
+			</div>
+
+			<div id="shopp-extensions-products-services" class="postbox">
+				<h3 class="hndle"><span>Products & Services</span></h3>
+				<div class="inside">
+					<table border="0" width="100%">
+   					 	<tr>
+                            <td width="45%"><p style="text-align:center"><a href="http://optimizemyshopp.com" title="Check out our latest post on Shopp">Optimize My Shopp</a></p><p>Tutorials, how-tos, and recommendations for the Shopp e-commerce plugin.</p><p>Need a Shopp developer to help you with your online store? <br /><a href="http://optimizemyshopp.com/store/wordpress-consulting/" title="Hire a Shopp developer today">Get in touch today</a></p></td>
+						    <td width="10%"></td>
+                            <td width="45%"><p style="text-align:center"><a href="http://shopp101.com" title="Check out a free lesson and join today">Shopp 101</a></p><p>Online training and video lessons for Shopp e-commerce plugin.</p><p>What do you think about video tutorials for Shopp? <br /><a href="http://shopp101.com" title="Learn more about Shopp video tutorials">Watch a free training video and sign up</a></p>
+                            </td>
+   						</tr>
+					</table>
+				</div>
+			</div>
+			
+			<div id="shopp-extensions-support-feedback" class="postbox">
+				<h3 class="hndle"><span>Support & Feedback</span></h3>
+				<div class="inside">
+				<p>Shopp + Extensions are 3rd-party products.</p> 
+				<p>Our plugins are <strong>actively supported</strong>. Support is provided as a courtesy by Lorenzo Orlando Caum, Enzo12 LLC. If you have any questions or concerns, please open a <a href="http://optimizemyshopp.com/support/" title="Open a new support ticket with Optimize My Shopp">new support ticket</a> via our Help Desk.</p>
+                <p>You can share feedback via this a <a href="http://optimizemyshopp.com/go/shopp-extensions-survey/" title="Take a super short survey">short survey</a>. Takes just a few minutes &mdash; we promise!</p>
+                <p>Feeling generous? You can support the continued development of the Shopp + Extensions by <a href="http://optimizemyshopp.com/go/donate-shopp-extensions/" title="Say thank you by purchasing Lorenzo a Redbull">buying me a Redbull</a>, <a href="http://optimizemyshopp.com/go/amazonwishlist/" title="Say thank you by gifting Lorenzo a book">ordering me a book</a> from my Amazon Wishlist, or <a href="http://optimizemyshopp.com/go/tip-shopp-help-desk/" title="Say thank you by tipping Lorenzo via the Shopp Help Desk">tipping me</a> through the Shopp Help Desk.</p>
+                </div>
+			</div>
+			
+			<div id="shopp-extensions-about-the-author" class="postbox">
+				<h3 class="hndle"><span>About the Author</span></h3>
+				<div class="inside">
+					<table border="0" width="100%">
+   					 	<tr>
+                            <td width="70%"><div><img style="padding: 0px 15px 0px 0px; float:left" src="<?php echo plugins_url( 'shopp-zendesk/images/lorenzo-orlando-caum-shopp-wordpress-150x150.jpg' , dirname(__FILE__) ); ?>" border="0" alt="Founder of Enzo12 LLC" width="150" height="150">
+                                <p>Lorenzo Orlando Caum is an entrepreneur and a marketer.</p>
+                                <p>Lorenzo contributes to the <a href="http://optimizemyshopp.com/go/shopp/" title="Visit shopplugin.net">Shopp</a> project as a member of the support team. He has written several  <a href="http://optimizemyshopp.com/resources/#shopp-extensions" title="View free WordPress plugins for Shopp">WordPress extensions for Shopp</a>. His latest project is <a href="http://shopp101.com" title="Shopp 101 &mdash; video tutorials for Shopp">video tutorials for Shopp</a>.</p>
+                                <p>He is the founder of Enzo12 LLC, a <a href="http://enzo12.com" title="Enzo12 LLC">web engineering firm</a> in Tampa, FL. If you would like to know more about Lorenzo, you can <a href="http://twitter.com/lorenzocaum" title="Follow Lorenzo on Twitter">follow him on Twitter</a> or <a href="http://lorenzocaum.com" title="Read Lorenzo's blog">check out his blog</a>.</p></div></td>
+                            <td width="30%"></td>
+   						</tr>
+					</table>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="postbox-container" style="width:25%;">
+		<div class="metabox-holder">
+				
+			<div id="shopp-extensions-subscribe" class="postbox">
+				<h3 class="hndle"><span>Free Email Updates</span></h3>
+				<div class="inside">
+					<p>Get infrequent email updates delivered right to your inbox about getting the most from Shopp.</p>
+					<div id="optin">
+					<p>
+					<form action="http://optimizemyshopp.us2.list-manage1.com/subscribe/post?u=5991854e8288cad7823e23d2e&amp;id=0719c3f096" method="post" target="_blank">
+					<input type="text" name="EMAIL" class="email" value="Enter your email" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" />
+					<input name="submit" class="button-primary" type="submit" value="Get Started!" />
+					</form>
+					</p>
+					</div>
+				</div>
+			</div>
+
+			<div id="shopp-extensions-news-from-oms-s101" class="postbox">
+				<h3 class="hndle"><span>News from Optimize My Shopp & Shopp 101</span></h3>
+				<div class="inside">
+				<p>Free Report<br /> <a href="http://optimizemyshopp.com/newsletter/" title="Receive your free report delivered instantly to your inbox">10 Steps to a More Secure WordPress</a></p>
+				<p>Documents & Presentations<br /> <a href="http://optimizemyshopp.com/resources/white-papers/" title="Get your free white paper on creating a fast Shopp website">Speeding up your Shopp Ecommerce Website</a><br /><a href="http://optimizemyshopp.com/resources/white-papers/" title="Get your free white paper on using Shopp with caching plugins">Shopp + Caching Plugins</a></p>
+				<?php _e('Recent posts from the blogs'); ?>
+				<?php
+				include_once(ABSPATH . WPINC . '/feed.php');
+				$rss = fetch_feed(array('http://feeds.feedburner.com/optimizemyshopp', 'http://feeds.feedburner.com/shopp101' ));
+				if (!is_wp_error( $rss ) ) : 
+    			$maxitems = $rss->get_item_quantity(7); 
+    			$rss_items = $rss->get_items(0, $maxitems); 
+				endif;
+				?>
+				<ul>
+    			<?php if ($maxitems == 0) echo '<li>No items.</li>';
+    			else
+    			foreach ( $rss_items as $item ) : ?>
+    			<li>
+        		<a href='<?php echo esc_url( $item->get_permalink() ); ?>'
+        		title='<?php echo 'Posted '.$item->get_date('j F Y | g:i a'); ?>'>
+        		<?php echo esc_html( $item->get_title() ); ?></a>
+    			</li>
+    			<?php endforeach; ?>
+				</ul>
+				</div>
+			</div>		
+
+		</div>
+		<br /><br /><br />
+	</div>
+</div>
+<?php	 	 
+	}
 
 	public function add_to_zendesk_list($Purchase) {
 		global $wpdb;
@@ -114,7 +239,7 @@ class Shopp_Zendesk {
 			<div id="shopp-zendesk-introduction" class="postbox">
 				<h3 class="hndle"><span>Introduction</span></h3>
 				<div class="inside">
-					<p>This plugin integrates <a href="http://optimizemyshopp.com/go/shopp/" title="Learn more about Shopp">Shopp</a> with <a href="http://optimizemyshopp.com/go/zendesk/" title="Learn more about Zendesk">Zendesk</a>.</p> 
+					<p>This plugin integrates <a href="http://optimizemyshopp.com/go/shopp/" title="Learn more about Shopp">Shopp</a> with <a href="http://optimizemyshopp.com/go/zendesk/" title="Learn more about Zendesk">Zendesk</a> and is part of Shopp + Extensions.</p> 
 					<p>After checkout, a customer's email, name, and phone number will be added to your Zendesk.</p>
 					<p>This process occurs in the background without needing action from the user.</p> 
 					<p>*If a user has never used your Zendesk, then they will be asked to set a password for their account. <em>This may or may not be applicable as it depends on the settings in your Zendesk.</em></p>
@@ -128,11 +253,8 @@ class Shopp_Zendesk {
 			<div id="shopp-zendesk-general-settings" class="postbox">
 				<h3 class="hndle"><span>Setup Tutorial</span></h3>
 				<div class="inside">
-				<p>The videos below are designed to show you an overview of the plugin and how to gather the information that you need to get it running quickly.</p>
-				<p>Pro-tip: After starting a video, click on the fullscreen button which appears to the right of the HD toggle.</p>
-				<p><strong>A Walkthrough of the Integration</strong><br /><br /><iframe src="http://player.vimeo.com/video/32981420?title=0&amp;byline=0&amp;portrait=0" width="600" height="300" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe></p>
-				<br />
 				<p><strong>How to Find Your Information from Zendesk</strong><br /><br /><iframe src="http://player.vimeo.com/video/32981669?title=0&amp;byline=0&amp;portrait=0" width="600" height="300" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe></p>
+                <p>Pro-tip: After starting a video, click on the fullscreen button which appears to the right of the HD toggle.</p>
 				</div>
 			</div>
 			
@@ -141,16 +263,15 @@ class Shopp_Zendesk {
 				<div class="inside">
 				<p>This is a 3rd-party integration.</p> 
 				<p>This plugin is <strong>actively supported</strong>. Support is provided as a courtesy by Lorenzo Orlando Caum, Enzo12 LLC. If you have any questions or concerns, please open a <a href="http://optimizemyshopp.com/support/" title="Open a new support ticket with Optimize My Shopp">new support ticket</a> via our Help Desk.</p>
-                <p>You can share feedback via this a <a href="http://optimizemyshopp.com/go/shopp-extensions-survey/" title="Say thank you by purchasing Lorenzo a Redbull" title="Take a super short survey">short survey</a>. Takes less 3 than minutes -- we promise!</p>
-                <p>Feeling generous? Please consider <a href="http://optimizemyshopp.com/go/donate-shopp-zendesk/" title="Say thank you by purchasing Lorenzo a Redbull">buying me a Redbull</a>, <a href="http://optimizemyshopp.com/go/amazonwishlist/" title="Say thank you by gifting Lorenzo a book">ordering me a book</a> from my Amazon Wishlist, or <a href="http://optimizemyshopp.com/go/tip-shopp-help-desk/" title="Say thank you by tipping Lorenzo via the Shopp Help Desk">tipping me</a> through the Shopp Help Desk.</p>
+                <p>You can share feedback via this a <a href="http://optimizemyshopp.com/go/shopp-extensions-survey/" title="Say thank you by purchasing Lorenzo a Redbull" title="Take a super short survey">short survey</a>. Takes just a few minutes &mdash; we promise!</p>
+                <p>Feeling generous? You can support the continued development of the Shopp + Zendesk by <a href="http://optimizemyshopp.com/go/donate-shopp-zendesk/" title="Say thank you by purchasing Lorenzo a Redbull">buying me a Redbull</a>, <a href="http://optimizemyshopp.com/go/amazonwishlist/" title="Say thank you by gifting Lorenzo a book">ordering me a book</a> from my Amazon Wishlist, or <a href="http://optimizemyshopp.com/go/tip-shopp-help-desk/" title="Say thank you by tipping Lorenzo via the Shopp Help Desk">tipping me</a> through the Shopp Help Desk.</p>
 				</div>
 			</div>
 			
 			<div id="shopp-zendesk-settings" class="postbox">
 				<h3 class="hndle"><span>Zendesk Settings</span></h3>
 				<div class="inside">
-				<p><strong>Current Limitation</strong></p>
-				<p>Zendesk has a feature called "Regular SSL". When enabled it secures your Help Desk via https. <strike>If you are using this feature you'll need to make an edit for the Shopp + Zendesk plugin  to work. <a href="http://optimizemyshopp.com/blog/how-to-use-shopp-zendesk-with-zendesks-regular-ssl/ ">Learn how to make this necessary edit</a></strike><br /><br /> Regular SSL is now required for this plugin (otherwise passwords are not secured).</p>
+				<p>Zendesk has a feature called "Regular SSL". Regular SSL is required for this plugin to work correctly.</p>
 					<p>
                     <form action="" method="post">
 					<table>
@@ -183,9 +304,9 @@ class Shopp_Zendesk {
 					<table border="0" width="100%">
    					 	<tr>
                             <td width="70%"><div><img style="padding: 0px 15px 0px 0px; float:left" src="<?php echo plugins_url( 'shopp-zendesk/images/lorenzo-orlando-caum-shopp-wordpress-150x150.jpg' , dirname(__FILE__) ); ?>" border="0" alt="Founder of Enzo12 LLC" width="150" height="150">
-                            <p><a href="http://twitter.com/lorenzocaum" title="Follow @lorenzocaum">@lorenzocaum</a> is an entrepreneur and a marketer.</p>
-                            <p>Lorenzo contributes to the <a href="http://optimizemyshopp.com/go/shopp/" title="Visit shopplugin.net">Shopp</a> project as a member of the support team. He has written several  <a href="http://optimizemyshopp.com/resources/#shopp-extensions" title="View free WordPress plugins for Shopp">WordPress extensions for Shopp</a>. His latest project is <a href="http://optimizemyshopp.com/go/shopp101/" title="Shopp 101 -- video tutorials for Shopp">video tutorials for Shopp</a>.</p>
-                            <p>He is the founder of Enzo12 LLC, a <a href="http://enzo12.com" title="Enzo12 LLC">web engineering firm</a> in Tampa, FL. If you would like to know more about Lorenzo, you can <a href="http://twitter.com/lorenzocaum">follow him on Twitter</a> or <a href="http://lorenzocaum.com" title="Read Lorenzo's blog">check out his blog</a>.</p></div></td>
+                                <p>Lorenzo Orlando Caum is an entrepreneur and a marketer.</p>
+                                <p>Lorenzo contributes to the <a href="http://optimizemyshopp.com/go/shopp/" title="Visit shopplugin.net">Shopp</a> project as a member of the support team. He has written several  <a href="http://optimizemyshopp.com/resources/#shopp-extensions" title="View free WordPress plugins for Shopp">WordPress extensions for Shopp</a>. His latest project is <a href="http://shopp101.com" title="Shopp 101 &mdash; video tutorials for Shopp">video tutorials for Shopp</a>.</p>
+                                <p>He is the founder of Enzo12 LLC, a <a href="http://enzo12.com" title="Enzo12 LLC">web engineering firm</a> in Tampa, FL. If you would like to know more about Lorenzo, you can <a href="http://twitter.com/lorenzocaum" title="Follow Lorenzo on Twitter">follow him on Twitter</a> or <a href="http://lorenzocaum.com" title="Read Lorenzo's blog">check out his blog</a>.</p></div></td>
                             <td width="30%"></td>
    						</tr>
 					</table>
@@ -235,8 +356,9 @@ class Shopp_Zendesk {
 
             <div id="shopp-zendesk-news-from-oms" class="postbox">
 				<h3 class="hndle"><span>News from Optimize My Shopp</span></h3>
-				<div class="inside"><p>Free eBook<br /> <a href="http://optimizemyshopp.com/newsletter/" title="Receive your free eBook delivered instantly to your inbox">10 Steps to a More Secure WordPress</a></p>
-				<p>White Papers<br /> <a href="http://optimizemyshopp.com/resources/white-papers/" title="Get your free white paper on creating a fast Shopp website">Speeding up your Shopp Ecommerce Website</a><br /><a href="http://optimizemyshopp.com/resources/white-papers/" title="Get your free white paper on using Shopp with caching plugins">Shopp + Caching Plugins</a></p>
+				<div class="inside">
+                <p>Free Report<br /> <a href="http://optimizemyshopp.com/newsletter/" title="Receive your free report delivered instantly to your inbox">10 Steps to a More Secure WordPress</a></p>
+				<p>Documents & Presentations<br /> <a href="http://optimizemyshopp.com/resources/white-papers/" title="Get your free white paper on creating a fast Shopp website">Speeding up your Shopp E-commerce Website</a><br /><a href="http://optimizemyshopp.com/resources/white-papers/" title="Get your free white paper on using Shopp with caching plugins">Shopp + Caching Plugins</a></p>
 				<?php _e('Recent posts from the blog'); ?>
 				<?php
 				include_once(ABSPATH . WPINC . '/feed.php');
@@ -264,7 +386,7 @@ class Shopp_Zendesk {
 				<h3 class="hndle"><span>Recommended</span></h3>
 				<div class="inside">
                     <p>Need a Shopp developer to help you with your online store? <br /><a href="http://optimizemyshopp.com/store/wordpress-consulting/" title="Hire a Shopp developer today">Get in touch today</a></p>
-                    <p>What do you think about video tutorials for Shopp? <br /><a href="http://optimizemyshopp.com/go/shopp101/" title="Learn more about Shopp video tutorials">Join Shopp 101 as a member today</a></p>
+                    <p>What do you think about video tutorials for Shopp? <br /><a href="http://shopp101.com" title="Learn more about Shopp video tutorials">Learn Shopp one video at a time</a></p>
 				</div>
 			</div>
 

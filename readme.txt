@@ -3,8 +3,8 @@ Contributors: lorenzocaum, enzo12llc
 Donate link: http://optimizemyshopp.com/go/donate-shopp-zendesk/
 Tags: ecommerce, online store, shopping cart, webshop, wp e-commerce, shopp plugin, shopp, helpdesk, support ticket system, help desk software, zendesk
 Requires at least: 3.0
-Tested up to: 3.5
-Stable tag: 1.0.7
+Tested up to: 3.5.1
+Stable tag: 1.2
 License: GPLv2
 
 Customers who order from your WordPress e-commerce store are added to your Zendesk help desk after checkout.
@@ -71,6 +71,9 @@ What do you think about video tutorials for Shopp? [Online training for Shopp fr
 
 == Changelog ==
 
+= 1.2 =
+* Moved to new menu
+
 = 1.0.7 =
 * Verified support for Shopp 1.2.4 and 1.2.5
 * Removed social sharing
@@ -119,6 +122,9 @@ What do you think about video tutorials for Shopp? [Online training for Shopp fr
 * First version!
 
 == Upgrade Notice ==
+
+= 1.2 =
+Upgrade Shopp + Zendesk to latest version.
 
 = 1.0.7 =
 Upgrade Shopp + Zendesk today.
