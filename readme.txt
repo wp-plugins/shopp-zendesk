@@ -1,10 +1,10 @@
 === Shopp + Zendesk ===
 Contributors: lorenzocaum, enzo12llc
-Donate link: http://optimizemyshopp.com/go/donate-shopp-zendesk/
+Donate link: http://shopp101.com/go/donate-shopp-zendesk/
 Tags: ecommerce, online store, shopping cart, webshop, wp e-commerce, shopp plugin, shopp, helpdesk, support ticket system, help desk software, zendesk
-Requires at least: 3.0
-Tested up to: 3.5.1
-Stable tag: 1.2
+Requires at least: 3.5
+Tested up to: 3.9.2
+Stable tag: 1.3
 License: GPLv2
 
 Customers who order from your WordPress e-commerce store are added to your Zendesk help desk after checkout.
@@ -21,10 +21,9 @@ With Shopp + Zendesk you no longer need to enter this information in manually. I
 
 = Recommendations =
 
-* Learn about our latest project: Shopp 101 -- [Web-based training for Shopp e-commerce plugin](http://shopp101.com)
-* Need help with your Shopp ecommerce store? Hire a [Shopp consultant and developer](http://optimizemyshopp.com/store/wordpress-consulting/) today.
-* View additional [WordPress plugins for Shopp](http://optimizemyshopp.com/resources/#shopp-extensions) by Lorenzo Orlando Caum, Enzo12 LLC
-* Follow Lorenzo on [Facebook](http://facebook.com/lorenzocaum), [Twitter](http://twitter.com/lorenzocaum), and [LinkedIn](http://www.linkedin.com/in/lorenzocaum)
+* Need help with your Shopp ecommerce store? Hire a [Shopp developer](http://shopp101.com/consulting/) today.
+* View additional [WordPress plugins for Shopp](http://shopp101.com/resources/shopp-extensions/) by Lorenzo Orlando Caum, Enzo12 LLC
+* Follow Lorenzo on [Facebook](http://facebook.com/lorenzocaum), [Twitter](http://twitter.com/lorenzocaum), [LinkedIn](http://www.linkedin.com/in/lorenzocaum), [Quora](https://www.quora.com/Lorenzo-Caum), and [Github](https://github.com/lorenzocaum)
 
 == Installation ==
 
@@ -33,7 +32,7 @@ With Shopp + Zendesk you no longer need to enter this information in manually. I
 3. Download Shopp + Zendesk. Unzip the `shopp-zendesk` folder.
 4. Upload the `shopp-zendesk` folder to the `wp-content/plugins/` directory.
 5. Activate Shopp + Zendesk through the Plugins menu in the WordPress admin.
-6. Go to Shopp &rarr; + Zendesk. 
+6. Go to Shopp 101 &rarr; + Zendesk. 
 7. Enter your Account URL, Username, and Password for Zendesk and click Save Settings.
 
 == Frequently Asked Questions ==
@@ -44,11 +43,11 @@ Visit [zendesk.com](http://www.zendesk.com) to register for an account.
 
 = What is Shopp and how do I get it? =
 
-Shopp is an e-commerce plugin for WordPress. Learn more about [Shopp](http://shopplugin.net).
+Shopp is an ecommerce plugin for WordPress. Learn more about [Shopp](http://shopplugin.net).
 
 = Are there any other extensions available for Shopp? =
 
-Yes, there are different extensions available including emailing marketing, short message service (sms) notifications, forms & reporting, help desk, and more. Please visit [Optimize My Shopp](http://optimizemyshopp.com/resources/#shopp-extensions).
+Yes, there are different extensions available including emailing marketing, short message service (sms) notifications, forms & reporting, help desk, and more. Please visit [Shopp 101](http://shopp101.com/resources/shopp-extensions/).
 
 == Screenshots ==
 
@@ -65,11 +64,18 @@ Credit to Brian Hartvigsen who created the a PHP API Wrapper for the Zendesk API
 
 = Recommended Links =
 
-Need a Shopp developer to help you with your Shopp? Hire a [Shopp consultant](http://optimizemyshopp.com/store/wordpress-consulting/) today.
+Need a Shopp developer to help you with your Shopp? Hire a [Shopp consultant](http://shopp101.com/consulting/) today.
 
 What do you think about video tutorials for Shopp? [Online training for Shopp from Shopp 101](http://shopp101.com)
 
 == Changelog ==
+
+= 1.3 =
+* Changed name of menu from + Extensions to Shopp 101
+* Verified support for WP 3.9.2
+* Verified support for Shopp 1.3.5
+* Removed links to old domain name
+* Only load CSS on WP admin screen
 
 = 1.2 =
 * Moved to new menu
@@ -122,6 +128,9 @@ What do you think about video tutorials for Shopp? [Online training for Shopp fr
 * First version!
 
 == Upgrade Notice ==
+
+= 1.3 =
+Upgrade for compatibility with the latest version of Shopp.
 
 = 1.2 =
 Upgrade Shopp + Zendesk to latest version.
